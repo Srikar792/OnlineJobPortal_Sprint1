@@ -11,6 +11,22 @@ public class BookmarkedFreelancerDTO {
 	private Recruiter bookmarkedBy;
 	
 	
+	
+	
+	public BookmarkedFreelancerDTO() {
+		super();
+	}
+	
+	
+	public BookmarkedFreelancerDTO(long id, Skill skill, Freelancer freelancer, Recruiter bookmarkedBy) {
+		super();
+		this.id = id;
+		this.skill = skill;
+		this.freelancer = freelancer;
+		this.bookmarkedBy = bookmarkedBy;
+	}
+
+
 	public long getId() {
 		return id;
 	}

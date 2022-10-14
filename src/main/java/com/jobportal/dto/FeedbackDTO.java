@@ -9,6 +9,24 @@ public class FeedbackDTO {
 	private String comment;
 	private Recruiter createdBy;
 	private Freelancer createdFor;
+	
+	
+	
+	public FeedbackDTO() {
+		super();
+	}
+	
+	
+	public FeedbackDTO(long id, Integer rating, String comment, Recruiter createdBy, Freelancer createdFor) {
+		super();
+		this.id = id;
+		this.rating = rating;
+		this.comment = comment;
+		this.createdBy = createdBy;
+		this.createdFor = createdFor;
+	}
+
+
 	public long getId() {
 		return id;
 	}

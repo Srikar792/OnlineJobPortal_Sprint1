@@ -13,6 +13,26 @@ public class RecruiterDTO {
 	private List<Job> postedJobs;
 	private List<Feedback> Feedbacks;
 	private List<BookmarkedFreelancer> freelancers;
+	
+	
+	
+	public RecruiterDTO() {
+		super();
+	}
+	
+	
+	public RecruiterDTO(long id, String firstName, String lastName, List<Job> postedJobs, List<Feedback> feedbacks,
+			List<BookmarkedFreelancer> freelancers) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.postedJobs = postedJobs;
+		Feedbacks = feedbacks;
+		this.freelancers = freelancers;
+	}
+
+
 	public long getId() {
 		return id;
 	}

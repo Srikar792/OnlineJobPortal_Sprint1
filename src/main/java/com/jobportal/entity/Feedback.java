@@ -1,20 +1,25 @@
 package com.jobportal.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Feedback {
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private Integer rating;
 	private String comment;
-	//Is there any relation to be add here?
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "recruiter_id", unique = true)	
 	private Recruiter createdBy;
-	//Is there any relation to be add here?
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "freelancer_id", unique = true)
 	private Freelancer createdFor;
 	
 	public Feedback(long id, Integer rating, String comment, Recruiter createdBy, Freelancer createdFor) {
@@ -56,12 +61,16 @@ public class Feedback {
 	public void setCreatedFor(Freelancer createdFor) {
 		this.createdFor = createdFor;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Feedback [id=" + id + ", rating=" + rating + ", comment=" + comment + ", createdBy=" + createdBy
 				+ ", createdFor=" + createdFor + "]";
 	}
+
+	
+	
+	
 	
 
 }

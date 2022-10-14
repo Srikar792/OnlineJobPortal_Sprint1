@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 @Entity
 public class Recruiter {
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	private String firstName;
 	private String lastName;
@@ -57,20 +57,20 @@ public class Recruiter {
 	public void setFeedbacks(List<Feedback> feedbacks) {
 		Feedbacks = feedbacks;
 	}
-	public List<BookmarkedFreelancer> getFreelancers() {
-		return freelancers;
-	}
-	public void setFreelancers(List<BookmarkedFreelancer> freelancers) {
-		this.freelancers = freelancers;
-	}
+//	public List<BookmarkedFreelancer> getFreelancers() {
+//		return freelancers;
+//	}
+//	public void setFreelancers(List<BookmarkedFreelancer> freelancers) {
+//		this.freelancers = freelancers;
+//	}
 	@Override
 	public String toString() {
-		return "Recruiter [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", postedJobs="
-				+ postedJobs + ", Feedbacks=" + Feedbacks + ", freelancers=" + freelancers + "]";
+		return "Recruiter [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", Feedbacks="
+				+ Feedbacks + "]";
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(Feedbacks, firstName, freelancers, id, lastName, postedJobs);
+		return Objects.hash(Feedbacks, firstName, id, lastName);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -82,9 +82,9 @@ public class Recruiter {
 			return false;
 		Recruiter other = (Recruiter) obj;
 		return Objects.equals(Feedbacks, other.Feedbacks) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(freelancers, other.freelancers) && id == other.id
-				&& Objects.equals(lastName, other.lastName) && Objects.equals(postedJobs, other.postedJobs);
+				&& id == other.id && Objects.equals(lastName, other.lastName);
 	}
+	
 	
 	
 
