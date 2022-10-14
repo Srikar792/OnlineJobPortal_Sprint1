@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.jobportal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class OnlineJobPortalApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineJobPortalApplication.class, args);
 	}
-
 }
